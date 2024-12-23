@@ -1,8 +1,9 @@
 ﻿
 
-byte iter = 0;
-while (iter < 3)
+byte iter = 1;
+while (iter < 4)
 {
+    Console.WriteLine($"\t\tпользователь № {iter}\n");
     (string name, string surName, string login, byte loginLenght, bool pet, byte age, string[] favColor) anketa;
 
     Console.Write("введи имя: ");
@@ -36,13 +37,10 @@ while (iter < 3)
 
     Console.WriteLine("напиши три любимых цвета (после ввода каждого цвета необходимо нажать Enter):");
     anketa.favColor = new string[3];
-    anketa.favColor[0] = Console.ReadLine();
-    anketa.favColor[1] = Console.ReadLine();
-    anketa.favColor[2] = Console.ReadLine();
+    for (int i = 0; i < 3; i++) anketa.favColor[i] = Console.ReadLine();
 
     Console.WriteLine("\nпривет {1} {0}!\nтвой логин {2}\nдлина логина {3} символов\n" + $"{otvetProPet}\n" + "тебе {4}\nтвои любимые цвета \n{5}\n{6}\n{7}",
-                        anketa.name, anketa.surName, anketa.login, anketa.loginLenght, anketa.age, anketa.favColor[0], anketa.favColor[1], anketa.favColor[2]);
-    Console.WriteLine("\n");
+                        anketa.name, anketa.surName, anketa.login, anketa.loginLenght, anketa.age, anketa.favColor[0], anketa.favColor[1], anketa.favColor[2] + "\n\n");
     iter++;
 }
 
